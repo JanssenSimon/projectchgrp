@@ -2,6 +2,7 @@ services:
   monaserver:
     image: elixir:1.16
     container_name: monaserver
+    user: ${USER}
     ports:
       - '4000:4000'
     volumes:
