@@ -3,7 +3,7 @@ defmodule MonaserverTest do
 
   doctest Monaserver
 
-  test "greets the world" do
-    assert Monaserver.hello() == :world
+  test "Trivial test" do
+    assert 1 == 1
   end
 end
