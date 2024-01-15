@@ -23,7 +23,6 @@ services:
       - './pgdata:/var/lib/postgresql/data'
     networks:
       - mona
-
 networks:
   mona:
     driver: bridge
