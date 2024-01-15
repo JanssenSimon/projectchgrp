@@ -27,3 +27,7 @@ monaserver-*.tar
 
 # Environment variables.
 .env
+
+# Database data
+pgdata/*
+!pgdata/postgresql.conf
