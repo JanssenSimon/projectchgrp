@@ -1,0 +1,29 @@
+services:
+  monaserver:
+    container_name: monaserver
+    image: elixir:1.16
+    ports:
+      - '4000:4000'
+    volumes:
+      - '.:/usr/src/myapp'
+    working_dir: '/usr/src/myapp'
+    networks:
+      - mona
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - './pgdata:/var/lib/postgresql/data'
+    networks:
+      - mona
+
+networks:
+  mona:
+    driver: bridge
