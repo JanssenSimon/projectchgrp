@@ -1,7 +1,7 @@
 services:
   monaserver:
-    container_name: monaserver
     image: elixir:1.16
+    container_name: monaserver
     ports:
       - '4000:4000'
     volumes:
@@ -12,8 +12,8 @@ services:
     depends_on:
       - postgres
   postgres:
-    container_name: postgres
     image: postgres:16
+    container_name: postgres
     restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
