@@ -1,8 +1,7 @@
 services:
   monaserver:
-    image: elixir:1.16
+    build: .
     container_name: monaserver
-    user: ${UNIXUSER}
     ports:
       - '4000:4000'
     volumes:
@@ -15,7 +14,6 @@ services:
   postgres:
     image: postgres:16
     container_name: postgres
-    user: ${UNIXUSER}
     restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
