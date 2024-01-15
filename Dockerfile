@@ -10,3 +10,5 @@ RUN apt-get update && \
 
 # Install Phoenix/Elixir packages
 RUN mix local.hex --force
+
+CMD ["/usr/src/myapp/entrypoint.sh"]
